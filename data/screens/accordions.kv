@@ -1,0 +1,32 @@
+ShowcaseScreen:
+	name: 'Accordions'
+
+	fullscreen: True
+
+	BoxLayout:
+		size_hint_y: None
+		height: '48dp'
+
+		ToggleButton:
+			id: tbh
+			text: 'Horizontal'
+			group: 'accordion'
+			state: 'down'
+
+		ToggleButton:
+			text: 'Vertical'
+			group: 'accordion'
+
+	Accordion:
+
+		orientation: 'horizontal' if tbh.state == 'down' else 'vertical'
+
+		AccordionItem:
+			title: 'Panel 1'
+
+		AccordionItem:
+			title: 'Panel 2'
+
+		AccordionItem:
+			title: 'Panel 3'
+
